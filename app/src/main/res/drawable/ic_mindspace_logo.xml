@@ -1,0 +1,20 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="64dp"
+    android:height="64dp"
+    android:viewportWidth="64"
+    android:viewportHeight="64">
+    <!-- Soft circular background -->
+    <path
+        android:fillColor="#EAEFFF"
+        android:pathData="M32,32m-30,0a30,30 0,1 1,60 0a30,30 0,1 1,-60 0" />
+    <!-- Heart outline with pulse line inside -->
+    <path
+        android:fillColor="#5B6FE8"
+        android:pathData="M32,48.5 C31.2,48.5 30.5,48.1 30,47.6 C24.5,42.5 17,35.2 17,26.5 C17,20.7 21.7,16 27.5,16 C30.6,16 33.4,17.4 35.3,19.6 C37.2,17.4 40,16 43.1,16 C48.9,16 53.6,20.7 53.6,26.5 C53.6,35.2 46.1,42.5 40.6,47.6 C40.1,48.1 39.4,48.5 38.6,48.5 Z" />
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="2.2"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M24,28.5 L28,28.5 L30.5,23.5 L34,33 L37,27 L39.5,28.5 L45,28.5" />
+</vector>

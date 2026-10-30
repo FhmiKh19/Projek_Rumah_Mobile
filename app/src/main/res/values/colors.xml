@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- MindSpace Design System Colors -->
+    <color name="primary">#5B6FE8</color>
+    <color name="primary_dark">#4759D1</color>
+    <color name="secondary">#A6B5F5</color>
+    <color name="secondary_light">#EAEFFF</color>
+    <color name="background">#F7F8FC</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="text_primary">#25263A</color>
+    <color name="text_secondary">#74798C</color>
+    <color name="text_muted">#A2A6B8</color>
+    <color name="card_border">#EAEBF4</color>
+    <color name="divider">#ECEEF7</color>
+    <color name="input_bg">#F4F5FD</color>
+
+    <!-- Mood Palette Tints -->
+    <color name="mood_happy_bg">#FFF8E6</color>
+    <color name="mood_happy_border">#FDE6A8</color>
+    <color name="mood_happy_text">#8A6508</color>
+
+    <color name="mood_calm_bg">#EDEFFE</color>
+    <color name="mood_calm_border">#5B6FE8</color>
+    <color name="mood_calm_text">#4353C4</color>
+
+    <color name="mood_okay_bg">#E6F8EE</color>
+    <color name="mood_okay_border">#B5ECD1</color>
+    <color name="mood_okay_text">#1F7D4E</color>
+
+    <color name="mood_sad_bg">#EAF1FE</color>
+    <color name="mood_sad_border">#BFD7FD</color>
+    <color name="mood_sad_text">#2B66CC</color>
+
+    <color name="mood_anxious_bg">#FEEBEB</color>
+    <color name="mood_anxious_border">#FBCACA</color>
+    <color name="mood_anxious_text">#C93030</color>
+
+    <!-- Badges & Chips -->
+    <color name="tag_bg">#F0F2FA</color>
+    <color name="tag_text">#4D5268</color>
+    <color name="breathe_bg">#E0F5E9</color>
+    <color name="breathe_text">#1D7044</color>
+    <color name="streak_bg">#FFF1E6</color>
+    <color name="streak_text">#C45112</color>
+    <color name="logout_red">#DC2626</color>
+</resources>
