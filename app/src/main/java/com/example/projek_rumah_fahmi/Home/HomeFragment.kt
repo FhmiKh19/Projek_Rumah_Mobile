@@ -1,13 +1,17 @@
 package com.example.projek_rumah_fahmi.Home
 
 import android.content.Context.MODE_PRIVATE
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.example.projek_rumah_fahmi.MainActivity
 import com.example.projek_rumah_fahmi.R
+import com.example.projek_rumah_fahmi.TutorialActivity
 import com.example.projek_rumah_fahmi.databinding.FragmentHomeBinding
 import com.google.android.material.snackbar.Snackbar
 
@@ -30,6 +34,11 @@ class HomeFragment : Fragment() {
         val sharedPref = requireContext().getSharedPreferences("user_pref", MODE_PRIVATE)
         val username = sharedPref.getString("username", "Fahmi") ?: "Fahmi"
         binding.txtGreetingName.text = "$username 👋"
+
+        // Tombol Tutorial / Panduan Fitur di Toolbar
+        binding.btnTutorialTop.setOnClickListener {
+            startActivity(Intent(requireContext(), TutorialActivity::class.java))
+        }
 
         // Quick mood pick reactions
         binding.cardMoodHappy.setOnClickListener {
@@ -77,6 +86,37 @@ class HomeFragment : Fragment() {
 
         binding.btnQuickAlert.setOnClickListener {
             Snackbar.make(binding.root, "Pengingat check-in harian Anda aktif pada pukul 20:00", Snackbar.LENGTH_SHORT).show()
+        }
+
+        // ── ChipGroup Material (Pola P8) ──────────────────────────────────────
+        binding.chipGroupFilter.setOnCheckedStateChangeListener { _, checkedIds ->
+            val selectedChipId = checkedIds.firstOrNull()
+            if (selectedChipId != null) {
+                when (selectedChipId) {
+                    R.id.chipMood -> (activity as? MainActivity)?.navigateToTab(R.id.nav_mood)
+                    R.id.chipJournal -> (activity as? MainActivity)?.navigateToTab(R.id.nav_journal)
+                    R.id.chipBreathe -> Snackbar.make(binding.root, "Latihan Pernapasan - Box Breathing dimulai!", Snackbar.LENGTH_SHORT).show()
+                    R.id.chipTips -> Snackbar.make(binding.root, "Menampilkan Tips Wellness...", Snackbar.LENGTH_SHORT).show()
+                    R.id.chipAll -> Snackbar.make(binding.root, "Menampilkan Semua Kategori", Snackbar.LENGTH_SHORT).show()
+                }
+            }
+        }
+
+        // ── Grid Layout Click Handlers ────────────────────────────────────────
+        binding.gridItemMoodCheckin.setOnClickListener {
+            (activity as? MainActivity)?.navigateToTab(R.id.nav_mood)
+        }
+        binding.gridItemBreathing.setOnClickListener {
+            Snackbar.make(binding.root, "Memulai panduan pernapasan 3 menit...", Snackbar.LENGTH_LONG)
+                .setAction("MULAI") {
+                    Snackbar.make(binding.root, "Tarik napas... 1.. 2.. 3.. 4.. Hembuskan...", Snackbar.LENGTH_SHORT).show()
+                }.show()
+        }
+        binding.gridItemJournal.setOnClickListener {
+            (activity as? MainActivity)?.navigateToTab(R.id.nav_journal)
+        }
+        binding.gridItemStats.setOnClickListener {
+            Snackbar.make(binding.root, "Fitur Statistik akan segera hadir! 📊", Snackbar.LENGTH_SHORT).show()
         }
     }
 

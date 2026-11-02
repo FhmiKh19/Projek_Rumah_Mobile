@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    bg_header_wave.xml
+    Header background dengan gradient ungu dan wave shape di bagian bawah.
+    Digunakan pada layout header Home fragment dan Tutorial Screen.
+-->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Layer 1: Gradient Background -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="135"
+                android:centerColor="#7B8FFF"
+                android:endColor="#4759D1"
+                android:startColor="#6C7FEF"
+                android:type="linear" />
+        </shape>
+    </item>
+
+    <!-- Layer 2: Wave Overlay di bagian bawah menggunakan path -->
+    <item android:gravity="bottom">
+        <shape android:shape="rectangle">
+            <solid android:color="#F7F8FC" />
+            <corners
+                android:topLeftRadius="48dp"
+                android:topRightRadius="0dp" />
+            <size android:height="32dp" />
+        </shape>
+    </item>
+
+</layer-list>

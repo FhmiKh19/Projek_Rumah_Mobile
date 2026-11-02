@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    selector_bottom_nav.xml
+    Color selector untuk icon dan text BottomNavigationView.
+    - state_checked=true  → warna primary ungu (#5B6FE8)
+    - default             → warna abu sekunder (#A2A6B8)
+-->
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:color="@color/primary" android:state_checked="true" />
-    <item android:color="@color/primary" android:state_selected="true" />
-    <item android:color="@color/text_secondary" />
+    <item android:color="#5B6FE8" android:state_checked="true" />
+    <item android:color="#A2A6B8" />
 </selector>

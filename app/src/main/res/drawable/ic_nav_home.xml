@@ -1,20 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    ic_nav_home.xml — Ikon rumah solid untuk Bottom Navigation.
+    Warna dikontrol penuh oleh itemIconTint (tidak ada hardcoded color).
+-->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="24dp"
     android:height="24dp"
     android:viewportWidth="24"
     android:viewportHeight="24">
+
+    <!-- Badan rumah (filled) -->
     <path
-        android:fillColor="#00000000"
-        android:strokeColor="#74798C"
-        android:strokeWidth="2"
-        android:strokeLineCap="round"
-        android:strokeLineJoin="round"
-        android:pathData="M3,9.5L12,3L21,9.5V20C21,20.55 20.55,21 20,21H4C3.45,21 3,20.55 3,20V9.5Z" />
-    <path
-        android:fillColor="#00000000"
-        android:strokeColor="#74798C"
-        android:strokeWidth="2"
-        android:strokeLineCap="round"
-        android:strokeLineJoin="round"
-        android:pathData="M9,21V12H15V21" />
+        android:fillColor="@android:color/black"
+        android:pathData="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z" />
+
 </vector>

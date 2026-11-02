@@ -4,10 +4,34 @@
         <item name="colorPrimary">@color/primary</item>
         <item name="colorOnPrimary">@color/white</item>
         <item name="colorSecondary">@color/secondary</item>
+        <!-- Active indicator BottomNav menggunakan colorSecondaryContainer (Material 3) -->
+        <item name="colorSecondaryContainer">#1A5B6FE8</item>
         <item name="android:windowBackground">@color/background</item>
         <item name="android:statusBarColor">@color/background</item>
         <item name="android:windowLightStatusBar">true</item>
+        <!-- Terapkan style BottomNav secara global -->
+        <item name="bottomNavigationStyle">@style/Widget.MindSpace.BottomNavigation</item>
     </style>
 
     <style name="Theme.Projek_rumah_fahmi" parent="Base.Theme.Projek_rumah_fahmi" />
+
+    <!--
+        Style BottomNavigationView:
+        Label aktif dan nonaktif ukuran sama (11sp) agar simetris dan rapi.
+    -->
+    <style name="Widget.MindSpace.BottomNavigation" parent="Widget.Material3.BottomNavigationView">
+        <item name="itemTextAppearanceActive">@style/BottomNav.TextActive</item>
+        <item name="itemTextAppearanceInactive">@style/BottomNav.TextInactive</item>
+    </style>
+
+    <style name="BottomNav.TextActive" parent="TextAppearance.Material3.LabelMedium">
+        <item name="android:textSize">11sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="BottomNav.TextInactive" parent="TextAppearance.Material3.LabelMedium">
+        <item name="android:textSize">11sp</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
 </resources>

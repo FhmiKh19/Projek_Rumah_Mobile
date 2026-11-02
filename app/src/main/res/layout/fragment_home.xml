@@ -37,6 +37,16 @@
                 android:textStyle="bold" />
 
             <ImageView
+                android:id="@+id/btnTutorialTop"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:layout_marginEnd="14dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Tutorial Screen"
+                android:src="@drawable/ic_info"
+                app:tint="@color/primary" />
+
+            <ImageView
                 android:id="@+id/imgNotificationTop"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
@@ -73,45 +83,55 @@
             android:paddingHorizontal="20dp"
             android:paddingBottom="28dp">
 
-            <!-- Greeting Banner -->
-            <RelativeLayout
+            <!-- Greeting Banner dengan bg_header_wave -->
+            <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp">
+                android:layout_height="120dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginHorizontal="-20dp"
+                android:background="@drawable/bg_header_wave">
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
+                <RelativeLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:layout_gravity="center_vertical"
+                    android:paddingHorizontal="20dp">
 
-                    <TextView
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Good morning,"
-                        android:textColor="@color/text_secondary"
-                        android:textSize="14sp" />
+                        android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/txtGreetingName"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="2dp"
-                        android:text="Fahmi 👋"
-                        android:textColor="@color/text_primary"
-                        android:textSize="22sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Good morning,"
+                            android:textColor="#CCE0FF"
+                            android:textSize="14sp" />
 
-                <ImageView
-                    android:id="@+id/btnQuickAlert"
-                    android:layout_width="38dp"
-                    android:layout_height="38dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:background="@drawable/bg_input_box"
-                    android:padding="8dp"
-                    android:src="@drawable/ic_bell" />
-            </RelativeLayout>
+                        <TextView
+                            android:id="@+id/txtGreetingName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="Fahmi 👋"
+                            android:textColor="@color/white"
+                            android:textSize="22sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/btnQuickAlert"
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:alpha="0.9"
+                        android:background="#33FFFFFF"
+                        android:padding="8dp"
+                        android:src="@drawable/ic_bell" />
+                </RelativeLayout>
+            </FrameLayout>
 
             <!-- How are you feeling today Header -->
             <RelativeLayout
@@ -327,6 +347,264 @@
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
             </LinearLayout>
+
+            <!-- CHIP GROUP – Filter Kategori Wellness      -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="12dp"
+                android:text="Kategori"
+                android:textColor="@color/text_primary"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <!-- HorizontalScrollView agar chip bisa scroll ke samping -->
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="-20dp"
+                android:paddingHorizontal="20dp"
+                android:scrollbars="none"
+                android:clipToPadding="false">
+
+                <!-- ChipGroup Material resmi dengan singleSelection (Pola P8) -->
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chipGroupFilter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:singleLine="true"
+                    app:singleSelection="true"
+                    app:selectionRequired="true">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipAll"
+                        style="@style/Widget.MaterialComponents.Chip.Filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="Semua" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipMood"
+                        style="@style/Widget.MaterialComponents.Chip.Filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="😊 Mood" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipJournal"
+                        style="@style/Widget.MaterialComponents.Chip.Filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="📓 Jurnal" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipBreathe"
+                        style="@style/Widget.MaterialComponents.Chip.Filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="🌬 Napas" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipTips"
+                        style="@style/Widget.MaterialComponents.Chip.Filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="💡 Tips" />
+
+                </com.google.android.material.chip.ChipGroup>
+            </HorizontalScrollView>
+
+
+            <!-- GRID LAYOUT – Menu Akses Cepat 2x2         -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="12dp"
+                android:text="Menu Cepat"
+                android:textColor="@color/text_primary"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <!-- Menu Cepat menggunakan androidx.gridlayout.widget.GridLayout resmi (Pola P8) -->
+            <androidx.gridlayout.widget.GridLayout
+                android:id="@+id/gridMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:columnCount="2"
+                app:useDefaultMargins="true">
+
+                <!-- Grid Item 1: Mood Check-in -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/gridItemMoodCheckin"
+                    android:layout_width="0dp"
+                    android:layout_height="126dp"
+                    android:layout_margin="4dp"
+                    app:layout_columnWeight="1"
+                    app:layout_gravity="fill_horizontal"
+                    app:cardBackgroundColor="#EDEFFE"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="0dp"
+                    app:strokeColor="#D0D6FC"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="12dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="😊"
+                            android:textSize="28sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:gravity="center"
+                            android:includeFontPadding="false"
+                            android:text="Mood\nCheck-in"
+                            android:textColor="@color/primary"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Grid Item 2: Breathing Exercise -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/gridItemBreathing"
+                    android:layout_width="0dp"
+                    android:layout_height="126dp"
+                    android:layout_margin="4dp"
+                    app:layout_columnWeight="1"
+                    app:layout_gravity="fill_horizontal"
+                    app:cardBackgroundColor="#E6F4F1"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="0dp"
+                    app:strokeColor="#C2E4DE"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="12dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="🌬️"
+                            android:textSize="28sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:gravity="center"
+                            android:includeFontPadding="false"
+                            android:text="Latihan\nPernapasan"
+                            android:textColor="#1D7044"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Grid Item 3: Tulis Jurnal -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/gridItemJournal"
+                    android:layout_width="0dp"
+                    android:layout_height="126dp"
+                    android:layout_margin="4dp"
+                    app:layout_columnWeight="1"
+                    app:layout_gravity="fill_horizontal"
+                    app:cardBackgroundColor="#FFF8E6"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="0dp"
+                    app:strokeColor="#FDE6A8"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="12dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="📓"
+                            android:textSize="28sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:gravity="center"
+                            android:includeFontPadding="false"
+                            android:text="Tulis\nJurnal"
+                            android:textColor="#8A6508"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Grid Item 4: Statistik -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/gridItemStats"
+                    android:layout_width="0dp"
+                    android:layout_height="126dp"
+                    android:layout_margin="4dp"
+                    app:layout_columnWeight="1"
+                    app:layout_gravity="fill_horizontal"
+                    app:cardBackgroundColor="#FEEBFF"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="0dp"
+                    app:strokeColor="#F0C6F5"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="12dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="📊"
+                            android:textSize="28sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:gravity="center"
+                            android:includeFontPadding="false"
+                            android:text="Lihat\nStatistik"
+                            android:textColor="#8B1DA8"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+            </androidx.gridlayout.widget.GridLayout>
 
             <!-- Daily Check-in Card (Streak & Check In) -->
             <com.google.android.material.card.MaterialCardView

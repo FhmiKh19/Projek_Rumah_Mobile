@@ -1,26 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    ic_nav_mood.xml — Ikon mood (smiley) solid untuk Bottom Navigation.
+    Warna dikontrol penuh oleh itemIconTint.
+-->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="24dp"
     android:height="24dp"
     android:viewportWidth="24"
     android:viewportHeight="24">
+
+    <!-- Lingkaran muka -->
     <path
-        android:fillColor="#00000000"
-        android:strokeColor="#74798C"
-        android:strokeWidth="2"
-        android:strokeLineCap="round"
-        android:strokeLineJoin="round"
-        android:pathData="M12,22C17.5228,22 22,17.5228 22,12C22,6.47715 17.5228,2 12,2C6.47715,2 2,6.47715 2,12C2,17.5228 6.47715,22 12,22Z" />
-    <path
-        android:fillColor="#00000000"
-        android:strokeColor="#74798C"
-        android:strokeWidth="2"
-        android:strokeLineCap="round"
-        android:strokeLineJoin="round"
-        android:pathData="M8,14C8.91,15.78 10.35,16.5 12,16.5C13.65,16.5 15.09,15.78 16,14" />
-    <path
-        android:fillColor="#74798C"
-        android:pathData="M9,9.5m-1.2,0a1.2,1.2 0 1,1 2.4,0a1.2,1.2 0 1,1 -2.4,0" />
-    <path
-        android:fillColor="#74798C"
-        android:pathData="M15,9.5m-1.2,0a1.2,1.2 0 1,1 2.4,0a1.2,1.2 0 1,1 -2.4,0" />
+        android:fillColor="@android:color/black"
+        android:pathData="M12,2C6.48,2 2,6.48 2,12C2,17.52 6.48,22 12,22C17.52,22 22,17.52 22,12C22,6.48 17.52,2 12,2ZM8.5,9.5C8.5,8.67 9.17,8 10,8C10.83,8 11.5,8.67 11.5,9.5C11.5,10.33 10.83,11 10,11C9.17,11 8.5,10.33 8.5,9.5ZM15.77,15.77C14.87,16.66 13.62,17.22 12,17.22C10.38,17.22 9.13,16.66 8.23,15.77C7.93,15.47 7.93,14.99 8.23,14.69C8.53,14.39 9.01,14.39 9.31,14.69C9.93,15.31 10.83,15.72 12,15.72C13.17,15.72 14.07,15.31 14.69,14.69C14.99,14.39 15.47,14.39 15.77,14.69C16.07,14.99 16.07,15.47 15.77,15.77ZM14,11C13.17,11 12.5,10.33 12.5,9.5C12.5,8.67 13.17,8 14,8C14.83,8 15.5,8.67 15.5,9.5C15.5,10.33 14.83,11 14,11Z" />
+
 </vector>

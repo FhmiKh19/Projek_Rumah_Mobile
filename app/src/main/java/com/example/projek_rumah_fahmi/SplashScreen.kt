@@ -22,16 +22,20 @@ class SplashScreen : AppCompatActivity() {
             insets
         }
 
-        val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
-        val isLogin = sharedPref.getBoolean("isLogin", false)
+        val userPref = getSharedPreferences("user_pref", MODE_PRIVATE)
+        val appPref  = getSharedPreferences("app_pref",  MODE_PRIVATE)
+
+        val isLogin       = userPref.getBoolean("isLogin",       false)
+        val tutorialDone  = appPref.getBoolean("tutorial_done",  false)
 
         lifecycleScope.launch {
             delay(2000) // Delay 2 detik sebelum masuk ke halaman berikutnya
-            if (isLogin) {
-                startActivity(Intent(this@SplashScreen, MainActivity::class.java))
-            } else {
-                startActivity(Intent(this@SplashScreen, LoginActivity::class.java))
+            val destination = when {
+                isLogin       -> Intent(this@SplashScreen, MainActivity::class.java)
+                tutorialDone  -> Intent(this@SplashScreen, LoginActivity::class.java)
+                else          -> Intent(this@SplashScreen, TutorialActivity::class.java)
             }
+            startActivity(destination)
             finish()
         }
     }

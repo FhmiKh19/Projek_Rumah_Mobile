@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    activity_main.xml
+    - fragment_container mengisi sisa ruang di atas navbar
+    - BottomNavigationView: wrap_content + minHeight 68dp
+      sehingga paddingBottom dari gesture inset bisa ditambahkan
+      via kode tanpa memotong konten navbar
+-->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -18,16 +25,29 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Bottom Navigation Bar (4 Menus: Home, Mood, Journal, Profile) -->
+    <!-- Garis tipis di atas navbar sebagai divider halus -->
+    <View
+        android:id="@+id/navDivider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#E8EAF6"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_nav_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Bottom Navigation Bar -->
+    <!-- height=wrap_content + minHeight supaya paddingBottom gesture inset
+         bisa ditambah dari kode tanpa memotong icon/label navbar -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_nav_view"
         android:layout_width="match_parent"
-        android:layout_height="64dp"
+        android:layout_height="wrap_content"
+        android:minHeight="68dp"
         android:background="@color/surface"
-        app:elevation="10dp"
-        app:itemIconSize="22dp"
+        app:elevation="12dp"
+        app:itemIconSize="26dp"
         app:itemIconTint="@color/selector_bottom_nav"
-        app:itemRippleColor="@color/secondary_light"
+        app:itemRippleColor="#145B6FE8"
         app:itemTextColor="@color/selector_bottom_nav"
         app:labelVisibilityMode="labeled"
         app:layout_constraintBottom_toBottomOf="parent"

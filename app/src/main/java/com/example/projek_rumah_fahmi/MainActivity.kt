@@ -2,7 +2,6 @@ package com.example.projek_rumah_fahmi
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -20,14 +19,22 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        ViewCompat.setOnApplyWindowInsetsListener(binding.main) { v, insets ->
+        // Terapkan status bar inset ke atas fragment container
+        // dan bottom inset ke navbar agar tidak tertimpa gesture bar
+        ViewCompat.setOnApplyWindowInsetsListener(binding.main) { _, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, 0)
+            // Padding atas untuk fragment agar tidak di-overlap status bar
+            binding.fragmentContainer.setPadding(
+                systemBars.left, systemBars.top, systemBars.right, 0
+            )
+            // Padding bawah navbar agar konten terpusat dan tidak terpotong gesture bar
+            binding.bottomNavView.setPadding(
+                0, 0, 0, systemBars.bottom
+            )
             insets
         }
 

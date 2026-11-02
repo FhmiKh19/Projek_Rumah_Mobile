@@ -30,6 +30,12 @@
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
 
+        <!-- Tutorial / Onboarding Screen (muncul hanya sekali) -->
+        <activity
+            android:name=".TutorialActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
         <!-- Halaman Utama MainActivity penampung 4 Fragment -->
         <activity
             android:name=".MainActivity"

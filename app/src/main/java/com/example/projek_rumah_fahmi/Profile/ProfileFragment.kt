@@ -10,6 +10,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import com.example.projek_rumah_fahmi.LoginActivity
 import com.example.projek_rumah_fahmi.MainActivity
+import com.example.projek_rumah_fahmi.TutorialActivity
 import com.example.projek_rumah_fahmi.databinding.FragmentProfileBinding
 import com.google.android.material.snackbar.Snackbar
 
@@ -35,6 +36,11 @@ class ProfileFragment : Fragment() {
 
         binding.txtProfileName.text = username
         binding.txtProfileEmail.text = email
+
+        // Buka Tutorial / Panduan Aplikasi
+        binding.btnOpenTutorial.setOnClickListener {
+            startActivity(Intent(requireContext(), TutorialActivity::class.java))
+        }
 
         // Settings items clicks
         binding.btnSettingReminder.setOnClickListener {
